@@ -39,12 +39,11 @@ bst_node_ptr_t create_node(temp_humid_data_t* arr);
 
 void insert_node(bst_node_ptr_t* tree, temp_humid_data_t data);
 
-/*
-void search_tree();
-*/
+bst_node_ptr_t search_tree(bst_node_ptr_t tree, time_t timestamp);
 
 void traverse_in_order(bst_node_ptr_t tree);
 
+time_t con_to_ut(char* arr);
 
 
 #endif

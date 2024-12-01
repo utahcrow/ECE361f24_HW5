@@ -17,16 +17,27 @@
 #define MAX_CHAR 1000
 
 int main(void) {
-    // Create our search tree
-    temp_humid_data_t test_arr[] = {{0,10,40},{1,20,50},{2,30,60}};
+    // Testing data
+    temp_humid_data_t test_arr[] = {{0,10,40},{1,20,50},{6,30,60}};
 
+    // Create our search tree
     int size = sizeof(test_arr) / sizeof(test_arr[0]);
     bst_node_ptr_t tree = create_tree(test_arr, size);
 
-    printf("In-order traversal:\n");
+    printf("In-order traversal:\n\n");
     traverse_in_order(tree);
 
-    printf("Back to main.\n");
+    temp_humid_data_t new_data = {4, 15, 39};
+    insert_node(&tree, new_data);
+
+    printf("In-order traversal:\n\n");
+    traverse_in_order(tree);
+
+    temp_humid_data_t next_data = {100, 15, 39};
+    insert_node(&tree, next_data);
+
+    printf("In-order traversal:\n\n");
+    traverse_in_order(tree);
 
     // Our main loop to get input
     char buffer[MAX_CHAR];
@@ -39,6 +50,8 @@ int main(void) {
             }
             buffer[i] = '\0';
             printf("You entered: %s\n", buffer);
+            printf("Searching for timestamp...\n");
+            search_tree(tree,con_to_ut(buffer));
             i = 0;
         } else {
             buffer[i++] = c;

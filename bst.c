@@ -45,3 +45,45 @@ void traverse_in_order(bst_node_ptr_t tree) {
     printf("Timestamp: %ld, Temp: %u, Humid: %u\n", tree->data.timestamp, tree->data.temp, tree->data.humid);
     traverse_in_order(tree->right);
 }
+
+bst_node_ptr_t search_tree(bst_node_ptr_t tree, time_t timestamp) {
+    printf("DEBUG: variable[timestamp] = value[%ld]", timestamp);
+    if (tree == NULL) {
+        return NULL;
+    }
+
+    if (timestamp == tree->data.timestamp) {
+        printf("Timestamp: %ld, Temp: %u, Humid: %u\n", tree->data.timestamp, tree->data.temp, tree->data.humid);
+        return tree;
+    } else if (timestamp < tree->data.timestamp) {
+        return search_tree(tree->left, timestamp);
+    } else {
+        return search_tree(tree->right, timestamp);
+    }
+}
+
+time_t con_to_ut(char* arr) {
+    char month[3];
+    char day[3];
+    char year[5];
+    int m = 0, d = 0, y = 0;
+
+    sscanf(arr, "%2[^/]/%2[^/]/%4s", month, day, year);
+
+    m = atoi(month);
+    d = atoi(day);
+    y = atoi(year);
+
+    // struct tm from time.h
+    struct tm tm = {0};
+    tm.tm_year = y - 1900;
+    tm.tm_mon = m - 1;
+    tm.tm_mday = d;
+
+    // fn from time.h
+    time_t result = mktime(&tm);
+
+    return result;
+}
+
+

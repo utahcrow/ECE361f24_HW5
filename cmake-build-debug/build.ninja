@@ -61,6 +61,18 @@ build CMakeFiles/HW5.dir/bst.c.o: C_COMPILER__HW5_unscanned_Debug /home/crow/CLi
   OBJECT_DIR = CMakeFiles/HW5.dir
   OBJECT_FILE_DIR = CMakeFiles/HW5.dir
 
+build CMakeFiles/HW5.dir/float_rndm.c.o: C_COMPILER__HW5_unscanned_Debug /home/crow/CLionProjects/HW5/float_rndm.c || cmake_object_order_depends_target_HW5
+  DEP_FILE = CMakeFiles/HW5.dir/float_rndm.c.o.d
+  FLAGS = -g -std=gnu99 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/HW5.dir
+  OBJECT_FILE_DIR = CMakeFiles/HW5.dir
+
+build CMakeFiles/HW5.dir/iom361_r2.c.o: C_COMPILER__HW5_unscanned_Debug /home/crow/CLionProjects/HW5/iom361_r2.c || cmake_object_order_depends_target_HW5
+  DEP_FILE = CMakeFiles/HW5.dir/iom361_r2.c.o.d
+  FLAGS = -g -std=gnu99 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/HW5.dir
+  OBJECT_FILE_DIR = CMakeFiles/HW5.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target HW5
@@ -69,7 +81,7 @@ build CMakeFiles/HW5.dir/bst.c.o: C_COMPILER__HW5_unscanned_Debug /home/crow/CLi
 #############################################
 # Link the executable HW5
 
-build HW5: C_EXECUTABLE_LINKER__HW5_Debug CMakeFiles/HW5.dir/main.c.o CMakeFiles/HW5.dir/bst.c.o
+build HW5: C_EXECUTABLE_LINKER__HW5_Debug CMakeFiles/HW5.dir/main.c.o CMakeFiles/HW5.dir/bst.c.o CMakeFiles/HW5.dir/float_rndm.c.o CMakeFiles/HW5.dir/iom361_r2.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/HW5.dir
   POST_BUILD = :

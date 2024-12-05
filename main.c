@@ -1,5 +1,5 @@
 /**
-* test.c - Testbench file for ECE 361 hw 5
+ * bst_testbench.c - Testbench file for ECE 361 hw 5
  *
  * @file:               test.c
  * @author:             Crow Crossman (crowc.edu)
@@ -138,6 +138,7 @@ int main(void) {
             }
 
             i = 0;
+            printf("--------------------------------------------\n");
         } else {
             buffer[i++] = c;
         }

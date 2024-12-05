@@ -49,6 +49,7 @@ void traverse_in_order(bst_node_ptr_t tree) {
 bst_node_ptr_t search_tree(bst_node_ptr_t tree, time_t timestamp) {
     //printf("DEBUG: timestamp = %ld\n", timestamp);
     if (tree == NULL) {
+        printf("No result found!\n");
         return NULL;
     }
 
